@@ -1,21 +1,21 @@
 <template>
     <div class="layout-main">
-        <div class="layout-header" data-tauri-drag-region>
-            <div class="logo">
-                <img :src="Logo" class="logo-img" data-tauri-drag-region />
+        <div class="layout-header flex justify-between" data-tauri-drag-region>
+            <div>
+                <img :src="Logo" class="logo-img size-8" data-tauri-drag-region />
             </div>
-            <div class="header-action">
-                <div class="titlebar-button" id="titlebar-minimize">
+            <div class="header-action flex items-center">
+                <div class="titlebar-button size-5" id="titlebar-minimize">
                     <el-icon>
                         <Minus />
                     </el-icon>
                 </div>
-                <div class="titlebar-button" id="titlebar-maximize">
+                <div class="titlebar-button size-5" id="titlebar-maximize">
                     <el-icon>
                         <FullScreen />
                     </el-icon>
                 </div>
-                <div class="titlebar-button" id="titlebar-close">
+                <div class="titlebar-button size-6" id="titlebar-close">
                     <el-icon>
                         <Close />
                     </el-icon>
@@ -47,7 +47,7 @@
     });
 </script>
 
-<style scoped>
+<!-- <style scoped>
     .layout-main {
         height: 100%;
 
@@ -101,4 +101,4 @@
             height: calc(100% - 56px);
         }
     }
-</style>
+</style> -->

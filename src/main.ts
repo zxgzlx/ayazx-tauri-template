@@ -1,5 +1,4 @@
 import { createApp } from 'vue';
-import './styles.css';
 import App from './App.vue';
 import { createPinia } from 'pinia';
 import ElementPlus from 'element-plus';
@@ -7,6 +6,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import i18n from './lang';
 import router from './route';
 import zhLocale from 'element-plus/es/locale/lang/zh-cn';
+import './index.css';
 
 const app = createApp(App);
 // 使用pinia

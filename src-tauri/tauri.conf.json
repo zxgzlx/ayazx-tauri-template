@@ -35,6 +35,10 @@
     },
     "windows": [
       {
+        "label": "custom",
+        "fullscreen": false,
+        "resizable": true,
+        "decorations": false,
         "title": "ayazx-tauri-template",
         "width": 800,
         "height": 600
