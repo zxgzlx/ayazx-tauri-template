@@ -2,7 +2,7 @@
 // import Logo from '@/assets/vue.svg';
 import CustomAlertDialog from '@/components/custom/CustomAlertDialog.vue';
 import CustomMenu from '@/components/custom/CustomMenu.vue';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 // import { appWindow } from '@tauri-apps/api/window';
 import { Button } from '@/components/ui/button';
 
@@ -18,15 +18,24 @@ onMounted(() => {
     //     .addEventListener('click', () => appWindow.close());
     console.log('onMounted------', document.getElementById('titlebar-close'));
 });
+const isShow = ref(false);
+const toggleShowDialog = () => {
+    isShow.value = !isShow.value;
+};
+const onConfirm = () => {
+    console.log('hello ok');
+};
+const onClose = () => {
+    console.log('hello cancel');
+};
 </script>
 
 <template>
     <div class="layout-main">
         <CustomMenu />
+        <Button @click="toggleShowDialog">Show Open</Button>
 
-        <CustomAlertDialog>
-            <Button>Show Open</Button>
-        </CustomAlertDialog>
+        <CustomAlertDialog v-model="isShow" :on-confirm="onConfirm" :on-close="onClose" />
         <!-- <div class="layout-header flex justify-between" data-tauri-drag-region>
             <div>
                 <img :src="Logo" class="logo-img size-8" data-tauri-drag-region />
